@@ -3,6 +3,10 @@ import styles2 from "./styles.css";
 import logo from './buddha.png';
 
 import {BrowserRouter as Router,Routes, Route, useNavigate, Link} from "react-router-dom"
+import React, { useState } from "react";
+import { render } from "@testing-library/react";
+
+
 function App() {
   return (
 
@@ -17,6 +21,10 @@ function App() {
   );
 }
 
+const Title = () =><Link to="/"><h2 id="title" > 
+등불을 밝혀죠!
+</h2></Link>
+
 function Home(){
   
   let navigate = useNavigate();
@@ -25,10 +33,9 @@ function Home(){
   };
   return(
     <div>
+      
       <header className="head">
-      <Link to="/">
-      <h2>등불을 밝혀죠!</h2>
-      </Link>
+      <Title/>
       <p>등불을 밝히고 마음을 나누세요</p>
     </header>
       <img src={logo} className="app-logo" alt="logo"></img>
@@ -39,63 +46,87 @@ function Home(){
 }
 
 
+
 function SignUp(){
-  return (
-    <><header className="head">
-      <Link to="/">
-      <h2>등불을 밝혀죠!</h2>
-      </Link>
-      <p>등불을 밝히고 마음을 나누세요</p>
-    </header><main>
+  const [count, setCount] = useState(0);
+  console.log(count);
+  
 
-        <div class="container" style= {styles2}>
-          <ul class="tabs">
-            <li class="tab-link current" data-tab="tab-1">회원가입</li>
-            <li class="tab-link" data-tab="tab-2">로그인</li>
-          </ul>
+  const clickHandler = (id) => {
+    setCount(id);
+  };
 
-          <div id="tab-1" class="tab-content current">
-            <form action="" method="get" class="form-signup">
-              <div class="form-signup">
+  const obj = {
+    0: <>
+    <div id="tab-1" className="tab-content">
+            <form action="" method="get" className="form-signup">
+              <div className="form-signup">
                 <label for="name">닉네임 </label>
                 <input type="text" name="name" id="name" placeholder="10자 이하" required/>
                 </div>
-              <div class="form-signup">
+              <div className="form-signup">
                 <label for="id">아이디 </label>
                 <input type="text" name="id" id="id" placeholder="영문 소문자, 숫자 4~20자" required/>
                 </div>
-              <div class="form-signup">
+              <div className="form-signup">
                 <label for="password">비밀번호 </label>
                 <input type="password" name="password" id="password" placeholder="입력해주세요" required/>
               </div>
-              <div class="form-signup">
+              <div className="form-signup">
                 <label for="passwordcheck">비밀번호 확인 </label>
                 <input type="text" name="passwordcheck" id="passwordcheck" placeholder="한번 더 입력해주세요" required/>
                 </div>
 
             </form>
           </div>
-
-          <div id="tab-2" class="tab-content">
-            <form action="" method="get" class="form-login">
-              <div class="form-login">
+    </>,
+    1:<>
+     <div id="tab-2" className="tab-content">
+            <form action="" method="get" className="form-login">
+              <div className="form-login">
                 <label for="id">아이디 </label>
                 <input type="text" name="id" id="id" required/>
                 </div>
-              <div class="form-login">
+              <div className="form-login">
                 <label for="password">비밀번호 </label>
                 <input type="password" name="password" id="password" required/>
                 </div>
             </form>
+      </div>
+    </>
+  }
+  
+ 
+    return (
+      <div className="wrapper">
+      <header className="head">
+      <Title/>
+        <p>등불을 밝히고 마음을 나누세요</p>
+      </header>
+
+          <div className="container" style= {styles2}>
+            <ul className="tabs" >
+              <li onClick={() => clickHandler(0)} className="tab-link " data-tab="tab-1">
+                <input type="radio" id="signup" name="select"></input>
+                <label for="signup">회원가입</label>
+                </li>
+              <li onClick={() => clickHandler(1)}className="tab-link" data-tab="tab-2">
+                  <input type="radio" id="signin" name="select"></input>
+                  <label for="signin">로그인</label>
+              
+              </li>
+              
+            </ul>
+
+          {/* this.state.activeId */}
+          <div className="contents">{obj[count]}</div>
+          
+          </div>  
+          <div className="form-ex">
+            <button type="submit">연등 만들기</button>
           </div>
-
-        </div>
-        <div class="form-ex">
-          <button type="submit">연등 만들기</button>
-        </div>
-
-      </main></>
-  );
-}
+          </div>
+      );
+  }
 
 export default App;

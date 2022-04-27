@@ -68,32 +68,49 @@ ul.tabs{
 
 
   ul.tabs li{
-    background: #634646;
+    
     width: calc(100%/2);
     font-size: 18px;
-    color: #fff;
+   
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     
     text-align: center;
-    
-   
     padding: 10px 15px;
     cursor: pointer;
   }
 
-  ul.tabs li.current{
+  
+
+  /* ul.tabs li{
     background: none;
     color: #634646;
-  }
+  } */
 
-  .tab-content.current{
+  /* .tab-content.current{
     display: inherit;
   }
   .tab-content{
     display: none;
     
+  } */
+
+  #signup, #signin{
+    display: none;
+    background: none;
+    color: #634646;
+    font-size: 16dp;
   }
+
+  label #signup, label #signin{
+      text-align: center;
+  }
+input:checked +.tablink {
+    color: #fff;
+    background-color: #634646;
+}
+
+
 
 form{
     position: relative;
@@ -110,9 +127,10 @@ form .form-example{
     
    
 }
-label{
+
+.form-signup label, .form-login label{
     float:left;
-    margin:0%;
+    
 }
 
 input{
