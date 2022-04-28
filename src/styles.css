@@ -8,10 +8,13 @@
 
 *{
     font-family: 'KOTRAHOPE';
-    color:#634646;
+    /* color:#634646; */
     text-align: center;
 }
 
+h2{
+    color:#634646;
+}
 a{
     text-decoration: none;
 }
@@ -80,38 +83,6 @@ ul.tabs{
     cursor: pointer;
   }
 
-  
-
-  /* ul.tabs li{
-    background: none;
-    color: #634646;
-  } */
-
-  /* .tab-content.current{
-    display: inherit;
-  }
-  .tab-content{
-    display: none;
-    
-  } */
-
-  #signup, #signin{
-    display: none;
-    background: none;
-    color: #634646;
-    font-size: 16dp;
-  }
-
-  label #signup, label #signin{
-      text-align: center;
-  }
-input:checked +.tablink {
-    color: #fff;
-    background-color: #634646;
-}
-
-
-
 form{
     position: relative;
     margin:0 .3em .3em 5px;
@@ -130,7 +101,6 @@ form .form-example{
 
 .form-signup label, .form-login label{
     float:left;
-    
 }
 
 input{
