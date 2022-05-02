@@ -54,8 +54,8 @@ function SignUp(){
   
  
   const AdSlideLI = styled.li`
-    color: ${props => (props.active ? `#634646` : `#fff`)};
-    background-color: ${props => (props.active ?  `#fff`: `#634646`)};
+    color: ${props => (props.active ? `#DC87A4` : `#fff`)};
+    background-color: ${props => (props.active ?  `#fff`: `#DC87A4`)};
     
   `;
     return (

@@ -28,12 +28,12 @@ button {
     border-radius: 8em;
     border: none;
     color: white;
-    background-color: #F3A76B;
-    box-shadow:0 .3em .3em #F46A04;
+    background-color: #DC87A4;
+    box-shadow:0 .3em .3em #DC87A4;
 }
 
 body{
-    background-image: url("../src/img/Background\ \(1\).svg");
+    background-image: url("../src/img/Background.svg");
     background-repeat: no-repeat;
     background-size:cover;
     margin-left: calc(100%/8);
@@ -135,6 +135,6 @@ input{
     border-radius: 8em;
     border: none;
     color: white;
-    background-color: #F3A76B;
-    box-shadow:0 .3em .3em #CD4B53;
+    background-color: #DC87A4;
+    box-shadow:0 .3em .3em #DC87A4;
 }

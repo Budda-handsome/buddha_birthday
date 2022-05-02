@@ -7,7 +7,7 @@ import {BrowserRouter ,Routes, Route} from "react-router-dom"
 
 
 function App() {
-  //axios.defaults.baseURL = 'http://localhost:8080' // 내 서버
+  axios.defaults.baseURL = 'http://localhost:8080' // 내 서버
   return (
 
     <BrowserRouter>
