@@ -1,6 +1,5 @@
 
 import logo from '../img/tample.svg';
-import TapMenu from './TapMenu';
 import Header from '../layout/Header';
 
 import {Link} from "react-router-dom"

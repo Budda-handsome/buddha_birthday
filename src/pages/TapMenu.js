@@ -11,7 +11,6 @@ function TapMenu(){
     setCount(id);
   };
   
-  
   const obj = {
     0: <>
     <SignUp/>
@@ -40,7 +39,6 @@ function TapMenu(){
                 <AdSlideLI active={count=== 1} onClick={() => clickHandler(1)}className="tab-link">
                   <span>로그인</span>
               </AdSlideLI>
-              
             </ul>
 
           {/* this.state.activeId */}

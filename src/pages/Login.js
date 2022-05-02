@@ -3,31 +3,35 @@ import axios from "axios";
 
 export default function Login(){
     const [values, setValues] = useState({
-        id: '',
-        password: '',
+        id: "",
+        password: ""
       })
     
     
-      const handleChangeForm = (e) => {
+      const handleChangeForm = (e) => { 
+        const {name, value} = e.target;
         setValues({
           ...values,
-          [e.target.name]: e.target.name
-        })
-      }
+          [name]: value
+        });
+      };
     
       const onClickLogin = (e) =>{
-        let url = '/api/login'
+        let url = 'https://775913ba-646a-4085-8f55-ee220e8101c5.mock.pstmn.io/user/first'
         let User = {
           'id': values.id,
           'password': values.password
         }
+        
     
       var config={
+
         header:{
           'Content-Type' : 'application/json',
         }
       }
-      axios.post(url, User, config, {withCredentials:true})
+
+      const response = axios.post(url, User, config, {withCredentials:true})
       .then(res => {
         console.log(res.data)
         if(res.data.id === undefined){
@@ -45,25 +49,23 @@ export default function Login(){
             sessionStorage.setItem('token', res.data.token)
             sessionStorage.setItem('userId', res.data.userId)
         }
-        document.location.href = "/"
-      }).catch()}
+      }).catch()
+      console.log(response);}
         
     return (
         <div id="tab-2" className="tab-content">
-            <form action="" method="get" className="form-login">
+            <form className="form-login" onSubmit={onClickLogin}>
               <div className="form-login">
                 <label >아이디 </label>
-                <input type="text" name="id" value={values.id} onChange={handleChangeForm}/>
+                <input type="text" name="id" onChange={handleChangeForm}/>
                 </div>
               <div className="form-login">
                 <label >비밀번호 </label>
-                <input type="password" name="password" value={values.password} onChange={handleChangeForm} />
-                </div>
+                <input type="password" name="password" onChange={handleChangeForm} />
+              </div>
             </form>
-            <div className="form-ex">
             <button type="submit" onClick={onClickLogin}>로그인 하기</button>
-          </div>
-      </div>
+        </div>
     );
 
 }

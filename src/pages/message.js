@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function message(){
+export default function Message(){
     return(
         <div>
             <back>
