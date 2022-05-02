@@ -1,6 +1,6 @@
 
 import logo from '../img/tample.svg';
-import SignUp from '../pages/SignUp';
+import TapMenu from './TapMenu';
 import Header from '../layout/Header';
 
 import {Link} from "react-router-dom"
@@ -16,7 +16,7 @@ export default function Home(){
       
       <img src={logo} className="app-logo" alt="logo"></img>
 
-      <Link to="/signup">
+      <Link to="/tapmenu">
       <button>시작하기</button>
       </Link>
      

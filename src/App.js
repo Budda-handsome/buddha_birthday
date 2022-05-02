@@ -1,19 +1,21 @@
 
-import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import React from 'react';
 import axios from 'axios';
 import {BrowserRouter ,Routes, Route} from "react-router-dom"
+import TapMenu from "./pages/TapMenu";
 
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:8080' // 내 서버
+  
+  //axios.defaults.baseURL = 'http://localhost:8080' // 내 서버
+  axios.defaults.baseURL = 'https://reqres.in/api/login' // 연습
   return (
 
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<Home/>} ></Route>
-      <Route path="/signup" element={<SignUp/>} ></Route>
+      <Route path="/tapmenu" element={<TapMenu/>} ></Route>
       </Routes>
       
     </BrowserRouter>
