@@ -10,8 +10,21 @@ import axios from 'axios';
     const onFlip = () => setflip((current) => !current);
 
     const [name, setname] = React.useState("");
-    const [id, setid] = React.useState("");
+    const [user_id, setid] = React.useState("");
     const [password, setpassword] = React.useState("");
+
+
+    const [message, setMessage] = React.useState("");
+
+    React.useEffect(() => {
+      fetch('/api/hello')
+      .then(response => response.text())
+      .then(message => {
+        setMessage(message);
+      })
+    })
+
+
 
     const changename = (event) => {
       setname(event.target.value);
@@ -34,27 +47,23 @@ import axios from 'axios';
     }
 
     const options = {
-      url: "https://27bbdc7e-efce-42aa-a1da-36be15bdf9e2.mock.pstmn.io",
+      url: "/signup",
       method : 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json;charset=UTF-8'
       },
       data : {
-        "id" : id,
+        "user_id" : user_id,
         "name": name,
         "password": password
       }
     }
 
     const onPush = () => {
-      axios(options).then(response =>{
-        setData(response.status);
-      });
+      axios(options).then(res => console.log(res.data)).catch(err=>console.log(err))
+      console.log("2")
     }
-
-    
- 
 
     if (flip == true){
       return (
@@ -103,9 +112,9 @@ import axios from 'axios';
             <input  placeholder="아이디" name="id" onChange={changeid}></input>
             <h3>비밀번호를 입력하세요</h3>
             <input  type="password" placeholder="비밀번호" name="password" onChange={changepassword}></input>
-            <input type="password" placeholder="비밀번호 확인"></input>
+            <input type="password" placeholder={message}></input>
             </div>
-            <button className='startbutton' onClick={onClick}>데이터 받기</button>
+            <button className='startbutton' onClick={onPush}>데이터 받기</button>
             <button className='startbutton' onClick={onPush}>데이터 넣기</button>
 
           </div> 
