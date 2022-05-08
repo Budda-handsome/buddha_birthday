@@ -1,6 +1,6 @@
 import React, {useState,useRef} from 'react';
 import tample from '../img/tample.svg';
-import style from '../changeback.css';
+import '../style/changeback.css';
 import axios from "axios";
 import { resolvePath } from 'react-router-dom';
 

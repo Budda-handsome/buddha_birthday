@@ -19,6 +19,9 @@ export default function Message(){
             <div>
                 <input type="text" placeholder='닉네임을 입력하세요(10자 이하)'></input>
             </div>
+            <buttom>
+                다음으로
+            </buttom>
 
         </div>
         
