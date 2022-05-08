@@ -1,0 +1,11 @@
+
+body{
+    background-image: url("../img/sky.svg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: #042439;
+}
+
+h1{
+    text-align: left;
+}

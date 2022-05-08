@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{
+    font-family: 'KOTRAHOPE';
+    /* color:#634646; */
+    text-align: center;
+}
+
+h2{
+    color:#E8DBD1;
+}
+a{
+    text-decoration: none;
+}
+
+button {
+    width:100%;
+    margin-left:0%;
+    margin-top: 5%;
+    padding:.8em;
+    font-size: 20px;
+    border-radius: 8em;
+    border: none;
+    color: white;
+    background-color: #DC87A4;
+    box-shadow:0 .3em .3em #DC87A4;
+}
+
+body{
+    background-image: url("../src/img/Background.svg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-left: calc(100%/8);
+    margin-right: calc(100%/8);
+    background-color: #042439;
+}
+
+
+.head{
+    margin:2rem;
+    font-size: x-large;
+    text-align: center;
+    color: #E8DBD1;
+}
+
+.head h2{
+    margin: auto auto 0 auto;
+}
+
+main{
+    margin:0 0rem 2rem 2rem;
+}
+
+.container{
+    padding:.1em .1em .1em .1em;
+    background: white;
+    margin: .5em;
+    margin-bottom: .8em;
+    border-radius:1em;
+    box-shadow: 0 .3em .3em #DDC3B8;
+}
+
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    list-style: none;
+   
+  }
+
+
+  ul.tabs li{
+    
+    width: calc(100%/2);
+    font-size: 18px;
+   
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
+    text-align: center;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+form{
+    position: relative;
+    margin:0 .3em .3em 5px;
+    padding:.6em;
+    
+    font-size: 20px;
+}
+
+form .form-example{
+    background-color: white;
+    padding: .3em 0 .3em 0;
+    justify-content: left;
+    
+   
+}
+
+.form-signup label, .form-login label{
+    float:left;
+}
+
+input{
+    text-align: left;
+    margin:.2em 0 .2em 0;
+    border-radius: 7px;
+    width:100%;
+    padding: .6em;
+    background-color: #f7f4f2;
+    border-width: 0;
+   
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+
+.form-ex{
+    width: auto;
+    margin: 0;
+}
+.form-ex button{
+   
+    width:100%;
+    margin-left:0%;
+    padding:.8em;
+    font-size: 20px;
+    border-radius: 8em;
+    border: none;
+    color: white;
+    background-color: #DC87A4;
+    box-shadow:0 .3em .3em #DC87A4;
+}
